@@ -4,11 +4,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 3000, // Client build limit
+    chunkSizeWarningLimit: 3000,
     rollupOptions: {
       onwarn(warning, warn) {
-        // SSR / Client ke large chunk size warnings ko filter out karta hai
-        if (warning.code === 'LARGE_BUNDLE' || warning.message.includes('Some chunks are larger')) {
+        if (warning.code === 'LARGE_BUNDLE' || warning.message?.includes('Some chunks are larger')) {
           return
         }
         warn(warning)
@@ -23,12 +22,6 @@ export default defineConfig({
           }
         },
       },
-    },
-  },
-  ssr: {
-    // SSR environment build ke warning thresholds override karta hai
-    build: {
-      chunkSizeWarningLimit: 3000,
     },
   },
 })
