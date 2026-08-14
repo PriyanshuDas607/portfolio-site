@@ -162,7 +162,7 @@ export const projects: Project[] = [
       "TailwindCSS 4"
     ],
     github: "https://github.com/rajat-wyrm/salesforge",
-    demo: "https://salesforge-nine.vercel.app",
+    demo: "https://uptoskills-project.vercel.app/",
     featured: true,
   },
   // {
