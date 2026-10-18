@@ -19,7 +19,7 @@ export default defineConfig({
     nitro({
       vercel: {
         functions: {
-          runtime: "nodejs20.x",
+          runtime: "nodejs24.x",
         },
       },
     }),
