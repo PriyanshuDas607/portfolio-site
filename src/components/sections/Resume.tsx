@@ -25,7 +25,7 @@ export function Resume() {
                 Coursework, projects, internships and tooling — formatted for both humans and
                 applicant tracking systems. Updated regularly.
               </p>
-              <p className="mono-label mt-6">PDF · A4 · last updated Aug 2026</p>
+              <p className="mono-label mt-6">PDF · A4 · last updated Oct 2026</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
