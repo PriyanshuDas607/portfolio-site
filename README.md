@@ -32,14 +32,13 @@ This portfolio highlights selected projects, technical skills, and professional 
 
 ---
 
-
 ## Contact
 
 Feel free to reach out:
 
 - Email: Priyanshudas272006@gmail.com
-- LinkedIn: [linkedin.com/in/PriyanshuDas](https://linkedin.com/in/priyanshu-das-919a1a302/)  
-- GitHub: [github.com/PriyanshuDas607](https://github.com/Priyanshudas607)  
+- LinkedIn: [linkedin.com/in/PriyanshuDas](https://linkedin.com/in/priyanshu-das-919a1a302/)
+- GitHub: [github.com/PriyanshuDas607](https://github.com/Priyanshudas607)
 - Twitter/X: [@PriyanshuDas27](https://x.com/PriyanshuDas27)
 
 ---

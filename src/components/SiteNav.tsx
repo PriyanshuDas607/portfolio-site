@@ -57,9 +57,7 @@ export function SiteNav() {
               aria-current={active === s.id ? "true" : undefined}
               className={cn(
                 "relative rounded-md px-3 py-2 text-[0.8125rem] transition-colors",
-                active === s.id
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground",
+                active === s.id ? "text-foreground" : "text-muted-foreground hover:text-foreground",
               )}
             >
               {s.label}

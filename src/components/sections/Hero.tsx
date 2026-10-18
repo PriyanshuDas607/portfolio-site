@@ -100,7 +100,10 @@ export function Hero() {
         >
           <MousePointer2 className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
           Scroll
-          <span className="relative block h-8 w-px overflow-hidden bg-border-strong" aria-hidden="true">
+          <span
+            className="relative block h-8 w-px overflow-hidden bg-border-strong"
+            aria-hidden="true"
+          >
             <span className="absolute inset-x-0 top-0 h-3 animate-[scrollcue_1.8s_ease-in-out_infinite] bg-primary" />
           </span>
         </a>

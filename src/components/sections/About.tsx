@@ -42,7 +42,10 @@ export function About() {
         <ul className="grid gap-px overflow-hidden rounded-lg border border-border sm:grid-cols-2">
           {about.strengths.map((s, i) => (
             <li key={s.title} className="bg-surface/40">
-              <Reveal delay={i * 0.05} className="group h-full p-5 transition-colors hover:bg-surface-raised/60">
+              <Reveal
+                delay={i * 0.05}
+                className="group h-full p-5 transition-colors hover:bg-surface-raised/60"
+              >
                 <p className="mono-label text-primary">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="mt-3 text-base font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>

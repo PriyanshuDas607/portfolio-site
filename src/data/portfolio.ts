@@ -17,7 +17,11 @@ export const profile = {
   resumePath: "/resume.pdf",
   socials: [
     { label: "GitHub", href: "https://github.com/PriyanshuDas607/", handle: "@priyanshudas607" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/priyanshu-das-919a1a302", handle: "/in/priyanshudas" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/priyanshu-das-919a1a302",
+      handle: "/in/priyanshudas",
+    },
   ],
   metrics: [
     { value: "AI/ML", label: "CSE specialisation" },
@@ -50,7 +54,14 @@ export const about = {
       body: "Clear documentation, small iterative commits and sharing what I pick up along the way.",
     },
   ],
-  interests: ["Machine learning", "Deep learning", "Web development", "Cybersecurity", "Cloud", "Developer tooling"],
+  interests: [
+    "Machine learning",
+    "Deep learning",
+    "Web development",
+    "Cybersecurity",
+    "Cloud",
+    "Developer tooling",
+  ],
 };
 
 export const education = [
@@ -64,7 +75,7 @@ export const education = [
       "AI & ML Specialization",
       "Core Computer Science Coursework",
       "Programming in C++ & Python",
-      "Data Structures & Algorithms"
+      "Data Structures & Algorithms",
     ],
 
     current: true,
@@ -73,12 +84,13 @@ export const education = [
     period: "2022 - 2024",
     institution: "MRV MODEL SCHOOL",
     credential: "Senior Secondary (Class XII) – Science Stream",
-    detail: "Completed Senior Secondary education with Physics, Chemistry, Mathematics, and Computer Science, developing strong analytical and problem-solving skills.",
+    detail:
+      "Completed Senior Secondary education with Physics, Chemistry, Mathematics, and Computer Science, developing strong analytical and problem-solving skills.",
     highlights: [
       "Physics, Chemistry & Mathematics",
       "Computer Science",
       "Problem Solving",
-      "Higher Secondary Education"
+      "Higher Secondary Education",
     ],
     current: false,
   },
@@ -86,13 +98,9 @@ export const education = [
     period: "2022",
     institution: "MRV MODEL SCHOOL",
     credential: "Secondary Education (Class X)",
-    detail: "Completed Secondary School education with a strong academic foundation across science, mathematics, and computer fundamentals.Completed Secondary School education with a strong academic foundation across science, mathematics, and computer fundamentals.",
-    highlights: [
-      "Mathematics",
-      "Science",
-      "Computer Fundamentals",
-      "Academic Excellence"
-    ],
+    detail:
+      "Completed Secondary School education with a strong academic foundation across science, mathematics, and computer fundamentals.Completed Secondary School education with a strong academic foundation across science, mathematics, and computer fundamentals.",
+    highlights: ["Mathematics", "Science", "Computer Fundamentals", "Academic Excellence"],
 
     current: false,
   },
@@ -102,7 +110,7 @@ export const skillGroups = [
   {
     category: "Languages",
     note: "Daily drivers",
-    items: ["Python", "JavaScript",  "Java", "C", "SQL"],
+    items: ["Python", "JavaScript", "Java", "C", "SQL"],
   },
   {
     category: "Frontend",
@@ -141,10 +149,56 @@ export type Project = {
   github?: string;
   demo?: string;
   featured?: boolean;
+  highlights?: string[];
 };
 
 export const projects: Project[] = [
- {
+  {
+    title: "Mapan",
+    kind: "Legal Metrology OS (Smart India Hackathon 2026)",
+    year: "2026",
+    problem:
+      "Testing and certifying weighing instruments per OIML R-76 (SIH 2026, Problem Statement 26035) previously relied on manual spreadsheet calculations and paper certificates, creating risk of human error, tampering, and zero auditability.",
+    solution:
+      "Built a full-stack legal metrology platform featuring an automated formula engine for intrinsic errors & step-function MPE across accuracy classes I–IIII, tamper-evident SHA-256 digital sealing with QR verification, a chained audit trail, and print-ready PDF certificate generation.",
+    highlights: [
+      "Built a full-stack platform for testing and certifying weighing instruments per OIML R-76 (SIH 2026, Problem Statement 26035), replacing manual spreadsheet calculations and paper certificates.",
+      "Implemented an automated formula engine that computes intrinsic errors and step-function Maximum Permissible Error across accuracy classes I to IIII, with real-time tolerance alerts.",
+      "Added tamper-evident certificates using SHA-256 digital sealing and scannable QR verification, plus a chained audit trail that logs every user action.",
+      "Implemented role-based access control (Admin and Operator roles) and PDF certificate generation with print-ready layouts.",
+    ],
+    stack: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Node.js",
+      "Express",
+      "Firebase Firestore",
+      "PostgreSQL",
+      "Prisma",
+    ],
+    github: "https://github.com/PriyanshuDas607/Mapan-r76",
+    demo: "https://mapan-r76.vercel.app",
+    featured: true,
+  },
+  {
+    title: "Nayantara Opticals",
+    kind: "Optical Store SaaS & Management Platform",
+    year: "2026",
+    problem:
+      "Independent optical retailers in New Delhi faced friction in managing customer eyewear selections, digital prescription tracking, manual appointment booking, and role-segregated admin operations.",
+    solution:
+      "Developed a modern responsive SaaS storefront and management platform featuring dynamic product catalogs, lens comparison, eye-test booking, digital prescription entry, guided frame-finder quiz, customer reviews, and JWT/OTP authentication with RBAC administration.",
+    highlights: [
+      "Built a responsive storefront for an independent optical store in New Delhi with product catalog, category browsing, lens comparison and eye-test appointment booking.",
+      "Added a prescription entry page, customer ratings and reviews, and a guided frame-finder quiz to improve the customer experience.",
+      "Implemented JWT authentication, OTP verification and role-isolated administration using role-based access control (RBAC).",
+    ],
+    stack: ["React", "Node.js", "JWT", "OTP Verification", "RBAC", "Tailwind CSS"],
+    demo: "https://nayantara-opticals.vercel.app",
+    featured: false,
+  },
+  {
     title: "SalesForge",
     kind: "Full stack web app (Open Source Contributor)",
     year: "2026",
@@ -152,6 +206,11 @@ export const projects: Project[] = [
       "B2B sales teams face severe 'tool fatigue' using separate apps for CRMs, email sequences, and analytics, leading to fragmented data, rigid custom schemas, and security risks in multi-tenant environments.",
     solution:
       "Contributed to an all-in-one B2B SaaS Sales Operating System featuring a drag-and-drop Kanban pipeline, dynamic JSON custom fields (`customFields`), real-time SSE analytics, and strict `tenantScope` multi-tenant row-level data isolation.",
+    highlights: [
+      "Contributed to an all-in-one B2B SaaS Sales Operating System featuring a drag-and-drop Kanban pipeline.",
+      "Implemented dynamic JSON custom fields (customFields) and real-time SSE streaming analytics.",
+      "Enforced strict tenantScope multi-tenant row-level data isolation.",
+    ],
     stack: [
       "Node.js",
       "Express 5",
@@ -159,41 +218,12 @@ export const projects: Project[] = [
       "PostgreSQL 16",
       "React 19",
       "Vite 7",
-      "TailwindCSS 4"
+      "TailwindCSS 4",
     ],
     github: "https://github.com/rajat-wyrm/salesforge",
     demo: "https://uptoskills-project.vercel.app/",
-    featured: true,
+    featured: false,
   },
-  // {
-  //   title: "Project two",
-  //   kind: "Machine learning project",
-  //   year: "Year",
-  //   problem: "Describe the problem and dataset. Placeholder — replace with your project.",
-  //   solution: "Describe the model, evaluation and results. Placeholder — replace with your project.",
-  //   stack: ["Python", "scikit-learn", "Pandas"],
-  //   github: "https://github.com/",
-  //   featured: true,
-  // },
-  // {
-  //   title: "Project three",
-  //   kind: "Cybersecurity tool",
-  //   year: "Year",
-  //   problem: "Describe the security gap you explored. Placeholder — replace with your project.",
-  //   solution: "Describe the tool or lab you built. Placeholder — replace with your project.",
-  //   stack: ["Python", "Linux", "Networking"],
-  //   github: "https://github.com/",
-  // },
-  // {
-  //   title: "Project four",
-  //   kind: "Frontend project",
-  //   year: "Year",
-  //   problem: "Describe the motivation. Placeholder — replace with your project.",
-  //   solution: "Describe what you shipped. Placeholder — replace with your project.",
-  //   stack: ["React", "Tailwind CSS"],
-  //   github: "https://github.com/",
-  //   demo: "https://example.com/",
-  // },
 ];
 
 export const achievements = [
@@ -223,7 +253,7 @@ export const achievements = [
       "Learned the fundamentals of cybersecurity, including network security, cyber threats, cryptography, authentication, and security best practices.",
   },
 
- {
+  {
     category: "Open Source",
     title: "Open Source Contributor",
     org: "Salesforce / GitHub",

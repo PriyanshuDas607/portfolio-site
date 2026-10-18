@@ -27,32 +27,57 @@ export function Contact() {
     e.preventDefault();
     if (!validate()) return;
     setState("sending");
-    
+
+    const serviceId = import.meta.env["VITE_EMAILJS_SERVICE_ID"];
+    const templateId = import.meta.env["VITE_EMAILJS_TEMPLATE_ID"];
+    const publicKey = import.meta.env["VITE_EMAILJS_PUBLIC_KEY"];
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error(
+        "EmailJS configuration missing. Please ensure VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY are set.",
+      );
+      setState("idle");
+      toast.error("Contact service is not configured.", {
+        description: `Please email me directly at ${profile.email}`,
+      });
+      return;
+    }
+
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           name: values.name,
+          from_name: values.name,
           email: values.email,
           from_email: values.email,
+          reply_to: values.email,
           message: values.message,
           title: "Portfolio Contact Form",
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey,
       );
-      
+
       setState("sent");
       toast.success("Message sent successfully!", {
         description: "I'll get back to you as soon as possible.",
       });
       setValues({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("EmailJS Error:", error);
       setState("idle");
-      toast.error("Failed to send message.", {
-        description: "Please try again or email me directly.",
-      });
+      const err = error as { text?: string; message?: string } | undefined;
+      const errorMsg = err?.text || err?.message || "";
+      if (errorMsg.includes("Invalid grant") || errorMsg.includes("reconnect your Gmail")) {
+        toast.error("Email service needs reconnection.", {
+          description: `Please email me directly at ${profile.email}`,
+        });
+      } else {
+        toast.error("Failed to send message.", {
+          description: `Please try again or email me directly at ${profile.email}`,
+        });
+      }
     }
   };
 

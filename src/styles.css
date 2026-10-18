@@ -73,7 +73,8 @@
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.79 0.14 200);
 
-  --glow-primary: 0 0 0 1px oklch(0.79 0.14 200 / 0.18), 0 12px 40px -12px oklch(0.79 0.14 200 / 0.35);
+  --glow-primary:
+    0 0 0 1px oklch(0.79 0.14 200 / 0.18), 0 12px 40px -12px oklch(0.79 0.14 200 / 0.35);
   --glow-soft: 0 20px 60px -30px oklch(0.79 0.14 200 / 0.4);
   --gradient-accent: linear-gradient(100deg, var(--primary), var(--accent) 55%, var(--violet));
 }
@@ -145,12 +146,11 @@
 
 @utility panel {
   position: relative;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in oklab, var(--surface-raised) 70%, transparent),
-      color-mix(in oklab, var(--surface) 60%, transparent)
-    );
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--surface-raised) 70%, transparent),
+    color-mix(in oklab, var(--surface) 60%, transparent)
+  );
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
 }

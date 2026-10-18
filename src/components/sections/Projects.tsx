@@ -18,7 +18,7 @@ export function Projects() {
           <Reveal
             key={p.title}
             delay={i * 0.05}
-            className={cn(p.featured ? "lg:col-span-2" : undefined)}
+            className={cn("h-full", p.featured ? "lg:col-span-2" : undefined)}
           >
             <ProjectCard project={p} large={!!p.featured} />
           </Reveal>
@@ -32,8 +32,8 @@ function ProjectCard({ project, large }: { project: Project; large: boolean }) {
   return (
     <article
       className={cn(
-        "group panel relative h-full overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:border-border-strong sm:p-8",
-        large && "lg:grid lg:grid-cols-[1.2fr_1fr] lg:gap-10",
+        "group panel relative flex h-full flex-col justify-between overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:border-border-strong sm:p-8",
+        large && "lg:grid lg:grid-cols-[1.25fr_1fr] lg:gap-10",
       )}
       style={{ boxShadow: "var(--glow-soft)" }}
     >
@@ -66,20 +66,41 @@ function ProjectCard({ project, large }: { project: Project; large: boolean }) {
               {project.solution}
             </dd>
           </div>
+          {project.highlights && project.highlights.length > 0 ? (
+            <div>
+              <dt className="mono-label">Key Highlights</dt>
+              <dd className="mt-2">
+                <ul className="space-y-1.5 text-xs sm:text-sm text-foreground/80">
+                  {project.highlights.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span
+                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/70"
+                        aria-hidden="true"
+                      />
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          ) : null}
         </dl>
       </div>
 
       <div className={cn("mt-6 flex flex-col justify-between gap-6", large && "lg:mt-0")}>
-        <ul className="flex flex-wrap gap-2" aria-label="Technologies">
-          {project.stack.map((tech) => (
-            <li
-              key={tech}
-              className="rounded-md border border-border px-2.5 py-1 font-mono text-[0.6875rem] uppercase tracking-wider text-muted-foreground"
-            >
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <div>
+          <p className="mono-label mb-2.5">Technologies</p>
+          <ul className="flex flex-wrap gap-2" aria-label="Technologies">
+            {project.stack.map((tech) => (
+              <li
+                key={tech}
+                className="rounded-md border border-border px-2.5 py-1 font-mono text-[0.6875rem] uppercase tracking-wider text-muted-foreground"
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="flex flex-wrap items-center gap-2">
           {project.demo ? (

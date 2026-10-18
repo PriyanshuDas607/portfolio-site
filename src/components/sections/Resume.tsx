@@ -20,16 +20,12 @@ export function Resume() {
                 <span className="h-px w-8 bg-border-strong" aria-hidden="true" />
                 Resume
               </p>
-              <h2 className="mt-4 text-3xl font-semibold sm:text-[2.5rem]">
-                One page, no filler.
-              </h2>
+              <h2 className="mt-4 text-3xl font-semibold sm:text-[2.5rem]">One page, no filler.</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 Coursework, projects, internships and tooling — formatted for both humans and
                 applicant tracking systems. Updated regularly.
               </p>
-              <p className="mono-label mt-6">
-                PDF · A4 · last updated Aug 2026
-              </p>
+              <p className="mono-label mt-6">PDF · A4 · last updated Aug 2026</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
